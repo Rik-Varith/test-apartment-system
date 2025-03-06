@@ -8,6 +8,9 @@ const filterSection = document.getElementById('filterSection');
 const propertyName = document.getElementById('propertyName');
 const propertyAddress = document.getElementById('propertyAddress');
 const roomList = document.getElementById('roomList');
+const propertyTotalRooms = document.getElementById('propertyTotalRooms');
+const propertyEmptyRooms = document.getElementById('propertyEmptyRooms');
+const propertyOccupiedRooms = document.getElementById('propertyOccupiedRooms');
 
 // Calculate total stats from all properties
 function calculateTotalStats() {
@@ -79,25 +82,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle property selection
-    propertySelect.addEventListener('change', function() {
-        const selectedProperty = mockData.properties.find(p => p.id == this.value);
-        
-        if (selectedProperty) {
-            // Show property details
-            propertyDetails.style.display = 'block';
-            propertyName.textContent = selectedProperty.name;
-            propertyAddress.textContent = `Address: ${selectedProperty.address}`;
+propertySelect.addEventListener('change', function() {
+    const selectedProperty = mockData.properties.find(p => p.id == this.value);
+    
+    if (selectedProperty) {
+        // Show property details
+        propertyDetails.style.display = 'block';
+        propertyName.textContent = selectedProperty.name;
+        propertyAddress.textContent = `Address: ${selectedProperty.address}`;
 
-            // Show filter section
-            filterSection.style.display = 'block';
+        // Calculate and display property-specific stats
+        const propertyStats = calculatePropertyStats(selectedProperty);
+        propertyTotalRooms.textContent = propertyStats.total;
+        propertyEmptyRooms.textContent = propertyStats.empty;
+        propertyOccupiedRooms.textContent = propertyStats.occupied;
 
-            // Display rooms
-            displayRooms(selectedProperty.rooms);
-        } else {
-            // Reset property specific sections
-            propertyDetails.style.display = 'none';
-            filterSection.style.display = 'none';
-            roomList.innerHTML = '';
-        }
-    });
+        // Show filter section
+        filterSection.style.display = 'block';
+
+        // Display rooms
+        displayRooms(selectedProperty.rooms);
+    } else {
+        // Reset everything
+        propertyDetails.style.display = 'none';
+        filterSection.style.display = 'none';
+        roomList.innerHTML = '';
+    }
+});
+
+function calculatePropertyStats(property) {
+    const total = property.rooms.length;
+    const occupied = property.rooms.filter(room => room.currentStatus !== 'vacant').length;
+    const empty = total - occupied;
+    return { total, occupied, empty };
+}
 });
