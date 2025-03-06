@@ -1,0 +1,79 @@
+/* room-card.css */
+.room-card {
+    /* existing styles */
+    transition: box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.room-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+}
+
+.room-details.expanded {
+    max-height: 500px;
+    padding: 16px;
+    opacity: 1;
+}
+.tenant-info {
+    background-color: var(--bg-very-light-cyan);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.main-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.contact-info {
+    display: grid;
+    gap: 8px;
+}
+
+.more-details {
+    color: var(--color-teal);
+    background: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.more-details:hover,
+.check-paid:hover {
+    color: var(--color-dark-teal);
+}
+
+.generate-invoice:hover {
+    opacity: 0.9;
+}
+
+.payment-info {
+    background-color: var(--bg-light-cyan);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.current-payment {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.generate-invoice {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    width: 100%;
+    padding: 12px;
+}
+
+.check-paid {
+    color: var(--color-teal);
+    background: none;
+}

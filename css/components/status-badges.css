@@ -1,0 +1,158 @@
+/* status-badges.css */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: 500;
+}
+
+.status-badge.paid {
+    background-color: var(--bg-very-light-cyan);
+    color: var(--color-green);
+}
+
+.status-badge.unpaid {
+    background-color: var(--bg-light-orange);
+    color: var(--color-burnt-orange);
+}
+
+.status-badge.overdue {
+    background-color: var(--color-vibrant-magenta);
+    color: var(--color-white);
+}
+
+/* Filter buttons */
+.filter-section {
+    margin: 24px 0;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+/* Remove this since we're using Font Awesome */
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-teal);
+    pointer-events: none;
+}
+
+.room-card {
+    /* existing styles */
+    transition: box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.room-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+}
+
+.room-details.expanded {
+    max-height: 500px;
+    padding: 16px;
+    opacity: 1;
+}
+
+/* Add hover states for buttons */
+.more-details:hover,
+.check-paid:hover {
+    color: var(--color-dark-teal);
+}
+
+.generate-invoice:hover {
+    opacity: 0.9;
+}
+
+.filter-btn {
+    /* existing styles */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Add active state */
+.filter-btn.active {
+    transform: scale(0.98);
+    opacity: 1;
+}
+
+.filter-btn.paid {
+    background-color: var(--bg-very-light-cyan);
+    color: var(--color-green);
+}
+
+.filter-btn.unpaid {
+    background-color: var(--bg-light-orange);
+    color: var(--color-burnt-orange);
+}
+
+.filter-btn.overdue {
+    background-color: var(--color-vibrant-magenta);
+    color: var(--color-white);
+}
+
+/* For search*/
+.search-bar {
+    position: relative;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-neutral-gray);
+}
+
+/* For select dropdown icon */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper .select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-teal);
+    pointer-events: none;
+}
+/* Property Details Section */
+.property-details {
+    margin: 24px 0;
+}
+.property-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 16px;
+    color: var(--color-teal);
+}
+
+.property-stats .stat-item {
+    display: flex;
+    gap: 8px;
+}
+.property-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.edit-property {
+    background-color: var(--bg-very-light-gray);
+    color: var(--color-almost-black);
+}
+
+.property-address {
+    color: var(--color-almost-black);
+}

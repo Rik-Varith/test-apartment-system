@@ -1,0 +1,110 @@
+:root {
+    /* Text Colors */
+    --color-teal: #0099A0;
+    --color-dark-teal: #0099A0;
+    --color-dark-orange: #430000;
+    --color-vibrant-magenta: #35111F;
+    --color-almost-black: #3B3B3C;
+    --color-green: #0E6E2B;
+    --color-dark-green: #17470B;
+    --color-neutral-gray: #939598;
+
+    /* Background Colors */
+    --bg-very-light-cyan: #EBF6F6;
+    --bg-light-cyan: #DEF0F9;
+    --bg-very-light-gray: #EDEDEE;
+    --bg-almost-white: #F8F8F8;
+    --bg-white: #FFFFFF;
+    --bg-light-orange: #faf0e8;
+
+    /* Status Colors */
+    --color-white: #FFFFFF;
+    --color-almost-white: #F8F8F8;
+    --color-burnt-orange: #D36F2E;
+    --color-vibrant-magenta: #D01F74;
+    --color-neutral-gray: #939598;
+    --color-light-gray: #E2E3E4;
+
+    /* Typography */
+    --font-mitr: 'Mitr', sans-serif;
+    --font-sarabun: 'Sarabun', sans-serif;
+
+      /* Add transition to typography classes */
+      .h1, .h2, .h3, .p1, .p2, .p3, .p4 {
+        transition: font-size 0.3s ease;
+    }
+
+    /* Font Sizes */
+    --font-h1: 24pt;
+    --font-h2: 20pt;
+    --font-h3: 16pt;
+    --font-p1: 16pt;
+    --font-p2: 14pt;
+    --font-p3: 14pt;
+    --font-p4: 14pt;
+    --font-p5: 10pt;
+    
+
+
+    /* Typography Classes */
+    .h1 {
+        font-family: var(--font-mitr);
+        font-weight: 500;
+        font-size: var(--font-h1);
+    }
+
+    .h2 {
+        font-family: var(--font-mitr);
+        font-weight: 500;
+        font-size: var(--font-h2);
+    }
+
+    .h3 {
+        font-family: var(--font-sarabun);
+        font-weight: 700;
+        font-size: var(--font-h3);
+    }
+
+    .p1 {
+        font-family: var(--font-sarabun);
+        font-weight: 700;
+        font-size: var(--font-p1);
+    }
+
+    .p2 {
+        font-family: var(--font-sarabun);
+        font-weight: 700;
+        font-size: var(--font-p2);
+    }
+
+    .p3 {
+        font-family: var(--font-sarabun);
+        font-weight: 400;
+        font-size: var(--font-p2);
+    }
+
+    .p4 {
+        font-family: var(--font-sarabun);
+        font-style: italic;
+        font-size: var(--font-p3);
+    }
+
+    .p5 {
+        font-family: var(--font-sarabun);
+        font-style: italic;
+        font-size: var(--font-p4);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        --font-h1: 18pt;
+        --font-h2: 14pt;
+        --font-h3: 14pt;
+        --font-p1: 12pt;
+        --font-p2: 10pt;
+        --font-p2: 10pt;
+        --font-p3: 10pt;
+        --font-p4: 8pt;
+    }
+}
