@@ -4,20 +4,22 @@ Payment Scenarios:
 
 1. Normal Payment (before due date)
     code logic need: 
+    - Regular bill amount
     - Status change to "paid"
 
 2. No Payment (not futher than overdue)
     code logic need:
+    - Regular bill amount
     - Status changes to "unpaid"
 
 2. Overdue Payment
     code logic need:
     - Status changes to "overdue" after due date
     - Track days overdue
+    - Regular bill amount
     - Late fee not appiled (if not futher than 5 days)
     - Late fee applies (caculate by days after due date)
-    
-    
+  
 3. Payment Extension
     code logic need:
     - New due date for that month
