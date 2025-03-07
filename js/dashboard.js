@@ -11,6 +11,10 @@ const roomList = document.getElementById('roomList');
 const propertyTotalRooms = document.getElementById('propertyTotalRooms');
 const propertyEmptyRooms = document.getElementById('propertyEmptyRooms');
 const propertyOccupiedRooms = document.getElementById('propertyOccupiedRooms');
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+// Declare currentRooms variable to store rooms of selected property for filtering
+let currentRooms = [];
 
 // Calculate total stats from all properties
 function calculateTotalStats() {
@@ -25,7 +29,7 @@ function calculateTotalStats() {
     // Calculate occupied rooms
     mockData.properties.forEach(property => {
         property.rooms.forEach(room => {
-            if (room.currentStatus !== 'vacant') {
+            if (room.currentStatus !== 'empty') {
                 occupiedRooms++;
             }
         });
@@ -67,6 +71,30 @@ function clearSelection() {
     propertySelect.value = '';
     propertySelect.dispatchEvent(new Event('change'));
 }
+function calculatePropertyStats(property) {
+    const total = property.rooms.length;
+    const occupied = property.rooms.filter(room => room.currentStatus !== 'empty').length;
+    const empty = total - occupied;
+    return { total, occupied, empty };
+}
+function filterRooms(status) {
+    if (status) {
+        const filteredRooms = currentRooms.filter(room => room.currentStatus.toLowerCase() === status.toLowerCase());
+        displayRooms(filteredRooms);
+    } else {
+        displayRooms(currentRooms);
+    }
+}
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const status = button.getAttribute('data-filter');
+        filterRooms(status);
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    });
+});
+
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -81,11 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
         propertySelect.appendChild(option);
     });
 
-    // Handle property selection
-propertySelect.addEventListener('change', function() {
+// Handle property selection
+    propertySelect.addEventListener('change', function() {
     const selectedProperty = mockData.properties.find(p => p.id == this.value);
     
-    if (selectedProperty) {
+        if (selectedProperty) {
         // Show property details
         propertyDetails.style.display = 'block';
         propertyName.textContent = selectedProperty.name;
@@ -102,18 +130,13 @@ propertySelect.addEventListener('change', function() {
 
         // Display rooms
         displayRooms(selectedProperty.rooms);
-    } else {
+        } else {
         // Reset everything
         propertyDetails.style.display = 'none';
         filterSection.style.display = 'none';
         roomList.innerHTML = '';
-    }
-});
+        }
+    });
 
-function calculatePropertyStats(property) {
-    const total = property.rooms.length;
-    const occupied = property.rooms.filter(room => room.currentStatus !== 'vacant').length;
-    const empty = total - occupied;
-    return { total, occupied, empty };
-}
+
 });

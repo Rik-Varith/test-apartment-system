@@ -1,0 +1,173 @@
+Scenarios of tennant payment
+----------------------------------------
+Normal Payment Scenarios:
+
+Early Payment (before due date)
+On-time Payment (on due date)
+Late Payment (with late fee)
+Problem Scenarios:
+
+Overdue Payment
+Status changes to "overdue" after due date
+Late fee applies
+Can track days overdue
+Special Cases:
+
+Payment Extension
+New due date
+Note explaining extension
+May or may not include late fee (based on agreement)
+Rent Discount
+Original amount
+Discount amount
+Final amount
+Note explaining discount reason
+Additional Charges
+Regular bill amount
+Extra charges (with description)
+Final total
+Multiple Month Issues:
+
+Multiple months overdue
+Accumulated late fees
+Payment allocation order
+Payment Methods:
+
+Bank Transfer
+Promptpay
+Cash
+
+This is how bill looks like
+----------------------------------------
+
+🟢 Normal Paid bill:
+----------------------------------------
+February 2024 Bill (🟢 PAID)
+
+Room A101                 Invoice #: INV-A101-202402
+Tenant: Somchai J.        Payment Date: 05 Feb 2024
+
+Original Charges:
+Rent                      ฿8,500
+Electricity              
+  Previous: 23455
+  Current:  23678
+  Used: 223 units        ฿1,561
+Water
+  Previous: 1234
+  Current:  1245
+  Used: 11 units         ฿220
+Garbage Fee              ฿30
+
+Total Amount:            ฿10,311
+
+Payment Details:
+Date Paid:               05 Feb 2024
+Payment Method:          Bank Transfer
+Reference:              SCB-20240205-XX789
+Payment Note:           Early payment
+Status:                 ✅ Paid on time
+
+Due Date:               10 Mar 2024
+Days Paid Early:        33 days
+
+Receipt #:              RCP-A101-202402
+
+
+Action Buttons:
+[Download Invoice] [Download Receipt] [Payment History]
+
+Additional Information:
+- Payment received before due date
+- Next bill will be ready on March 1st
+
+
+🟡 Normal Unpaid bill:
+----------------------------------------
+
+February 2024 Bill (🟡 UNPAID)
+
+Room A101                 Invoice #: INV-A101-202402
+Tenant: Somchai J.        Issue Date: 01 Feb 2024
+
+Current Charges:
+Rent                      ฿8,500
+Electricity              
+  Previous: 23455
+  Current:  23678
+  Used: 223 units        ฿1,561
+Water
+  Previous: 1234
+  Current:  1245
+  Used: 11 units         ฿220
+Garbage Fee              ฿30
+
+Total Due:               ฿10,311
+
+Payment Information:
+Due Date:               10 Mar 2024
+Days Until Due:         5 days
+
+Payment Methods:
+Bank Transfer:          XXX-X-XXXXX-X (SCB)
+Promptpay:             XXX-XXX-XXXX
+
+
+Action Buttons:
+[Pay Now] [Download Invoice] [Report Issue]
+
+⚠️ Reminder:
+- Payment due in 5 days
+- Please include room number in transfer reference
+- Send payment slip via Line: @landlord
+
+
+🔴 Worst case bill
+----------------------------------------
+
+February 2024 Bill (🔴 OVERDUE)
+
+Room A103                 Invoice #: INV-A103-202402
+Tenant: Rattanaporn M.    Days Overdue: 15
+
+Original Charges:
+Rent                      ฿8,500
+Electricity              
+  Previous: 23455
+  Current:  23678
+  Used: 223 units        ฿1,561
+Water
+  Previous: 1234
+  Current:  1245
+  Used: 11 units         ฿220
+Garbage Fee              ฿30
+
+Base Total:              ฿10,311
+
+Additional Charges:
+Late Fee (15 days)       ฿500
+AC Repair               ฿1,500
+Window Damage           ฿800
+
+Total Additional:        ฿2,800
+
+Previous Outstanding:
+January 2024            ฿10,565
+Late Fee (45 days)      ฿1,500
+
+Total Outstanding:       ฿12,065
+
+TOTAL DUE:              ฿25,176
+Original Due Date:       10 Mar 2024
+Extension Requested:     Denied
+Last Reminder Sent:      25 Mar 2024
+
+Payment Instructions:
+Bank Transfer: xxx-x-xxxxx-x
+Promptpay: xxx-xxx-xxxx
+
+⚠️ IMPORTANT NOTICES:
+- 2 months outstanding payment
+- Contract expires: 14 Mar 2024
+- Final notice before legal action
+- Security deposit may be forfeited
