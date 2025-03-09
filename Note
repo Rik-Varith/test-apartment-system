@@ -28,12 +28,12 @@ Payment Scenarios:
     - Note explaining extension
     - May or may not include late fee (based on agreement)
 
-5. Rent Discount (ขอส่วนลด)
+5. Rent Discount (ขอจ่ายเดือนถัดไป)
     code logic need:
-    - Regular bill amount
-    - Discount amount
-    - Final amount
-    - Note explaining discount reason (who approved/verified)
+    - New due date for that month
+    - Status changes to "Extend to Next Month" 
+    - Add total to next month bill
+    - Note explaining Reason (who approved/verified)
 
 6. Additional Charges (ถ้ามีไรพังแล้วเขาต้องจ่ายค่าซ่อม)
     code logic need:

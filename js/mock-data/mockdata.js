@@ -16,32 +16,35 @@ name: "The Residence Sukhumvit",
                 roomType: "1 bed 1 bath",
                 hasAC: true,
                 size: "30sqm",
+                totalTenats: 1,
                 rentalFee: 8500,
+                parkingFee: 500,
                 currentStatus: "paid",
-                    tenant: {
-                        name: "Somchai",
-                        surname: "Jaidee",
-                        nickname: "Chai",
-                        phone: "081-234-5678",
-                        line: "@somchai",
-                        lineId: "somchai.j",
-                        email: "somchai@email.com",
-                        moveInDate: "2022-09-01",
-                        depositAmount: 17000,         
-                        contractEnd: "2024-08-31",
+                
+                tenant: {
+                    name: "Somchai",
+                    surname: "Jaidee",
+                    nickname: "Chai",
+                    phone: "081-234-5678",
+                    lineId: "somchai.j",
+                    email: "somchai@email.com",
+                    moveInDate: "2022-09-01",
+                    depositAmount: 17000,         
+                    contractEnd: "2024-08-31",
+                },
 
-                        emergencyContact: {
-                            name: "Somsri",
-                            surname: "Jaidee",
-                            nickname: "Sri",
-                            phone: "081-234-5679",
-                            line: "@somsri",
-                            lineId: "somsri.j",
-                            email: "somsri@email.com"
-                        }
-                    },
-                    previousTenant: {},
-                    currentInvoice: {  // Updated to February bill
+                emergencyContact: {
+                    name: "Somsri",
+                    surname: "Jaidee",
+                    nickname: "Sri",
+                    phone: "081-234-5679",
+                    lineId: "somsri.j",
+                    email: "somsri@email.com",
+                    relationship: "Wife"
+                },
+                    
+                previousTenant: {}, // No previous tenant
+                currentInvoice: {
                         month: "February 2024",
                         invoiceNumber: "INV-A101-202402",
                         issueDate: "2024-02-01",
@@ -67,8 +70,8 @@ name: "The Residence Sukhumvit",
                         },
                         totalAmount: 10311,
                         status: "unpaid"
-                    },
-                    paymentHistory: [
+                },
+                paymentHistory: [
                         {
                             month: "February 2024",
                             rentalFee: 8500,
@@ -161,8 +164,8 @@ name: "The Residence Sukhumvit",
                             paymentNote: "",
                             lateFee: 0
                         }
-                    ],
-                    additionalFeatures: {
+                ],
+                additionalFeatures: {
                     furniture: [
                         "1 queen size bed",
                         "1 dining table",
@@ -170,9 +173,8 @@ name: "The Residence Sukhumvit",
                         "1 AC units"
                     ],
                     OtherDetails: " ",
-                    },
-                    
-                    notes: [
+                },
+                notes: [
                     {
                       detail: "Window Crack",
                       date: "2025-01-10",
@@ -186,28 +188,28 @@ name: "The Residence Sukhumvit",
                 size: "25sqm",
                 rentalFee: 7500,
                 currentStatus: "unpaid",
+                
                 tenant: {
-                        name: "Wichai",
-                        surname: "Suksai",
-                        nickname: "Wit",
-                        phone: "089-876-5432",
-                        line: "@wichai",
-                        lineId: "wichai.s",
-                        email: "wichai@email.com",
-                        moveInDate: "2023-06-01",    // Relatively new tenant
-                        depositAmount: 15000,        // 2 months rent
-                        contractEnd: "2024-05-31",   // First contract period
-                            emergencyContact: {
-                            name: "Pranee",
-                            surname: "Suksai",
-                            nickname: "Pran",
-                            phone: "089-876-5433",
-                            line: "@pranee",
-                            lineId: "pranee.s",
-                            email: "pranee@email.com"
-                        }
+                    name: "Wichai",
+                    surname: "Suksai",
+                    nickname: "Wit",
+                    phone: "089-876-5432",
+                    lineId: "wichai.s",
+                    email: "wichai@email.com",
+                    moveInDate: "2023-06-01",    // Relatively new tenant
+                    depositAmount: 15000,        // 2 months rent
+                    contractEnd: "2024-05-31",   // First contract period
                 },
-                previousTenant: {},
+                emergencyContact: {
+                    name: "Pranee",
+                    surname: "Suksai",
+                    nickname: "Pran",
+                    phone: "089-876-5433",
+                    lineId: "pranee.s",
+                    email: "pranee@email.com",
+                    relationship: "Mother"
+                },
+                previousTenant: {}, // No previous tenant
                 paymentHistory: [
                     {
                         month: "February 2024",
@@ -324,30 +326,32 @@ name: "The Residence Sukhumvit",
                 roomType: "2 bed 1 bath",
                 hasAC: true,
                 size: "45sqm",
+                totalTenats: 3,
                 rentalFee: 12000,
+                
                 currentStatus: "overdue",
                     tenant: {
                         name: "Rattanaporn",
                         surname: "Meesuk",
                         nickname: "Ploy",
                         phone: "065-789-4561",
-                        line: "@ploymeesuk",
                         lineId: "ploy.ratta",
                         email: "ploy.ratta@email.com",
                         moveInDate: "2023-03-15",    // Having payment issues after almost 1 year
                         depositAmount: 24000,        // 2 months rent (higher rent room)
                         contractEnd: "2024-03-14",   // Contract ending soon
-                        emergencyContact: {
-                            name: "Sompong",
-                            surname: "Meesuk",
-                            nickname: "Pong",
-                            phone: "081-456-7890",
-                            line: "@sompongm",
-                            lineId: "sompong.m",
-                            email: "sompong.m@email.com",
-                            relationship: "Father"
-                        }
                     },
+
+                    emergencyContact: {
+                        name: "Sompong",
+                        surname: "Meesuk",
+                        nickname: "Pong",
+                        phone: "081-456-7890",
+                        lineId: "sompong.m",
+                        email: "sompong.m@email.com",
+                        relationship: "Father"
+                    },
+                    
                     previousTenant: {},
                     paymentHistory: [
                         {
@@ -477,23 +481,23 @@ name: "The Residence Sukhumvit",
                         surname: "Jansuk",
                         nickname: "Kong",
                         phone: "092-345-6789",
-                        line: "@kongmongkol",
                         lineId: "kong.m",
                         email: null, // Some tenants might not have email
                         moveInDate: "2022-11-01",    // Long-term tenant in budget room
                         depositAmount: 11000,        // 2 months rent (lowest rent room)
-                        contractEnd: "2024-10-31",   // Renewed once already
+                        contractEnd: "2024-10-31",   
+                    },
+                    
                     emergencyContact: {
                         name: "Waraporn",
                         surname: "Jansuk",
                         nickname: "Porn",
                         phone: "092-345-6780",
-                        line: "@warapornj",
                         lineId: null,
                         email: null,
                         relationship: "Mother"
-                        }
                     },
+                    
                     previousTenant: {},
                     paymentHistory: [
                         {
@@ -618,23 +622,23 @@ name: "The Residence Sukhumvit",
                         surname: "Wongsakul",
                         nickname: "Fon",
                         phone: "086-123-4567",
-                        line: "@fonsiriporn",
                         lineId: "fon.siri",
                         email: "fon.siri@email.com",
                         moveInDate: "2023-08-15",    // Relatively new tenant
                         depositAmount: 18000,        // 2 months rent
                         contractEnd: "2024-08-14",   // First contract period
+                    },
+                    
                     emergencyContact: {
                         name: "Thanapong",
                         surname: "Wongsakul",
                         nickname: "Pong",
                         phone: "086-123-4568",
-                        line: "@pongthana",
                         lineId: "pong.thana",
                         email: "pong.thana@email.com",
                         relationship: "Husband"
-                        }
                     },
+                    
                     previousTenant: {},
                     paymentHistory: [
                         {
@@ -766,21 +770,23 @@ name: "The Residence Sukhumvit",
                         surname: "Srisuwan",
                         nickname: "Best",
                         phone: "095-789-1234",
-                        line: "@bestnat",
                         lineId: "best.natt",
                         email: "best.natt@email.com",
                         moveInDate: "2024-01-15",
                         depositAmount: 17000, // 2 months rent
                         contractEnd: "2025-01-14",
+                    },
+
                     emergencyContact: {
                         name: "Supattra",
                         surname: "Srisuwan",
                         nickname: "Su",
                         phone: "095-789-1235",
-                        line: "@supattra",
+                        lineId: " ",
+                        email: " ",
                         relationship: "Sister"
-                        }
                     },
+                    
                     previousTenant: {
                         name: "Chaiyuth",
                         surname: "Meesuk",
@@ -871,34 +877,30 @@ name: "The Residence Sukhumvit",
                 size: "30sqm",
                 rentalFee: 8500,
                 currentStatus: "overdue",
-                    tenant: {
-                        name: "Thanapon",
-                        surname: "Ritthisuk",
-                        nickname: "Non",
-                        phone: "084-555-7890",
-                        line: "@nonnon",
-                        lineId: "non.than",
-                        email: "non.than@email.com",
-                        moveInDate: "2023-05-01",    // About 9 months - started great, now problematic
-                        depositAmount: 17000,        // 2 months rent
-                        contractEnd: "2024-04-30",   // Requesting early termination
-                        terminationRequest: {
-                            requestDate: "2024-02-10",
-                            requestedEndDate: "2024-03-15",
-                            reason: "Job relocation",
-                            status: "pending",
-                            note: "Tenant has 2 months of partial payments and damages to resolve"
-                        },
-                        emergency: {
-                            name: "Suchada",
-                            surname: "Ritthisuk",
-                            nickname: "Da",
-                            phone: "084-555-7891",
-                            line: "@suchada",
-                            relationship: "Mother"
-                        }
+                    
+                tenant: {
+                    name: "Thanapon",
+                    surname: "Ritthisuk",
+                    nickname: "Non",
+                    phone: "084-555-7890",
+                    lineId: "non.than",
+                    email: "non.than@email.com",
+                    moveInDate: "2023-05-01",    // About 9 months - started great, now problematic
+                    depositAmount: 17000,        // 2 months rent
+                    contractEnd: "2024-04-30",   // Requesting early termination
                     },
-                    paymentHistory: [
+
+                emergencyContact: {
+                    name: "Suchada",
+                    surname: "Ritthisuk",
+                    nickname: "Da",
+                    phone: "084-555-7891",
+                    lineId: "suchada.rit",
+                    email: " ",
+                    relationship: "Mother"
+                    },
+                    
+                paymentHistory: [
                         {
                             month: "February 2024",
                             rentalFee: 8500,
@@ -1155,7 +1157,6 @@ name: "The Residence Sukhumvit",
                         surname: "Wongsawat",
                         nickname: "Pear",
                         phone: "082-444-5555",
-                        line: "@pearpiyarat",
                         lineId: "pear.piy",
                         email: "pear.piyarat@email.com",
                         moveInDate: "2024-02-01",
@@ -1167,7 +1168,6 @@ name: "The Residence Sukhumvit",
                         surname: "Wongsawat",
                         nickname: "Chai",
                         phone: "082-444-5556",
-                        line: "@surachai",
                         relationship: "Father",
                         email: "surachai.w@email.com"
                         }
@@ -1334,7 +1334,6 @@ name: "The Residence Sukhumvit",
                         surname: "Srisawat",
                         nickname: "Bank",
                         phone: "095-789-1234",
-                        line: "@banknat",
                         lineId: "bank.nat",
                         email: "bank.nat@email.com",
                         moveInDate: "2023-08-15",
@@ -1345,7 +1344,6 @@ name: "The Residence Sukhumvit",
                         surname: "Srisawat",
                         nickname: "Pat",
                         phone: "095-789-1235",
-                        line: "@patchar",
                         relationship: "Sister",
                         email: "pat.sri@email.com"
                         }
@@ -1487,7 +1485,6 @@ name: "The Residence Sukhumvit",
                         surname: "Phongphan",
                         nickname: "Cream",
                         phone: "091-234-5678",
-                        line: "@creamthanawan",
                         lineId: "cream.thana",
                         email: "cream.thana@email.com",
                         moveInDate: "2023-05-01",
@@ -1500,7 +1497,6 @@ name: "The Residence Sukhumvit",
                             surname: "Phongphan",
                             nickname: "Chai",
                             phone: "081-234-5678",
-                            line: "@somchai.p",
                             relationship: "Father"
                     },
                     previousTenant: {},
@@ -1631,7 +1627,6 @@ name: "The Residence Sukhumvit",
                         surname: "Wongchai",
                         nickname: "Chai",
                         phone: "088-777-8888",
-                        line: "@chaiwong",
                         lineId: "chai.wong",
                         email: "chai.wong@email.com",
                         moveInDate: "2023-07-01",
@@ -1642,7 +1637,6 @@ name: "The Residence Sukhumvit",
                             surname: "Wongchai",
                             nickname: "Rat",
                             phone: "088-777-9999",
-                            line: "@ratree",
                             relationship: "Wife",
                             email: "ratree@email.com"
                         }
@@ -1767,7 +1761,6 @@ name: "The Residence Sukhumvit",
                         surname: "Thongdee",
                         nickname: "Earth",
                         phone: "084-555-6666",
-                        line: "@earthjira",
                         lineId: "earth.jira",
                         email: "earth.jira@email.com",
                         moveInDate: "2022-12-01",
@@ -1778,7 +1771,6 @@ name: "The Residence Sukhumvit",
                         surname: "Thongdee",
                         nickname: "Nat",
                         phone: "084-555-7777",
-                        line: "@natthong",
                         relationship: "Brother",
                         email: "nat.thong@email.com"
                         }
