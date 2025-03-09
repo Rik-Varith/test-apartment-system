@@ -58,7 +58,7 @@ This is how bill looks like
 🟢 Normal Paid bill:
 ----------------------------------------
 February 2024 Bill (🟢 PAID)
-
+Address: 123/456 Moo 7, Sukhumvit 71, Bangkok
 Room A101                 Invoice #: INV-A101-202402
 Tenant: Somchai J.        Payment Date: 05 Feb 2024
 
@@ -101,7 +101,7 @@ Additional Information:
 ----------------------------------------
 
 February 2024 Bill (🟡 UNPAID)
-
+Address: 123/456 Moo 7, Sukhumvit 71, Bangkok
 Room A101                 Invoice #: INV-A101-202402
 Tenant: Somchai J.        Issue Date: 01 Feb 2024
 
@@ -141,7 +141,7 @@ Action Buttons:
 ----------------------------------------
 
 February 2024 Bill (🔴 OVERDUE)
-
+Address: 123/456 Moo 7, Sukhumvit 71, Bangkok
 Room A103                 Invoice #: INV-A103-202402
 Tenant: Rattanaporn M.    Days Overdue: 15
 
