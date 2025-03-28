@@ -1,13 +1,18 @@
 /* room-card.css */
 .room-card {
     transition: box-shadow 0.3s ease;
-    border-bottom: 1px solid var(--color-light-gray);
+    border-top: 1px solid var(--color-light-gray);
     padding: 10px;
-    width: 100%;
+    width: 90%;
+    max-width: 1000px;
 }
 
 .room-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.room-list {
+    width: 90%;
+    max-width: 1000px;
 }
 
 .room-header {
@@ -38,6 +43,8 @@
 .status-badge {
     padding: 4px 12px;
     border-radius: 3px;
+    margin-left: 8px;
+    margin-right: 8px;
     text-align: center;
 }
 
@@ -50,11 +57,13 @@
 .status-badge.unpaid {
     background-color: var(--bg-light-orange);
     color: var(--color-burnt-orange);
+    border: 1px solid var(--color-burnt-orange);
 }
 
 .status-badge.overdue {
     background-color: var(--color-vibrant-magenta);
     color: var(--color-white);
+    border: 1px solid var(--color-dark-vibrant-magenta);
 }
 
 .tenant-info {
