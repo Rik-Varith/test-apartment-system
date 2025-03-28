@@ -1,8 +1,8 @@
 const mockData = {
   properties: [
-    {
-id: 1,
-name: "The Residence Sukhumvit",
+{
+    id: 1,
+    name: "The Residence Sukhumvit",
     address: "123/45 Sukhumvit 64, Phra Khanong, Bangkok 10260",
     totalRooms: 7,
     utilityRates: {
@@ -1092,7 +1092,8 @@ name: "The Residence Sukhumvit",
         },
       ]
     },
-{id: 2,  name: "Baan Suan Apartment",
+{
+    id: 2,  name: "Baan Suan Apartment",
     address: "789 Moo 4, Tambon Bang Phli Yai, Bang Phli, Samut Prakan 10540",
     totalRooms: 5,
     utilityRates: {

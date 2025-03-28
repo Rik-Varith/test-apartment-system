@@ -77,14 +77,25 @@ function calculatePropertyStats(property) {
     const empty = total - occupied;
     return { total, occupied, empty };
 }
-function filterRooms(status) {
-    if (status) {
-        const filteredRooms = currentRooms.filter(room => room.currentStatus.toLowerCase() === status.toLowerCase());
-        displayRooms(filteredRooms);
-    } else {
-        displayRooms(currentRooms);
+function filterRooms(status, searchterm = '') {
+    if (!currentRooms || currentRooms.length === 0) {
+        console.warn('No rooms to filter');
+        return;
     }
+
+    let filteredRooms = currentRooms;
+
+    if (status) {
+        filteredRooms = filteredRooms.filter(room => room.currentStatus.toLowerCase() === status.toLowerCase());
+    }
+
+    if (searchTerm) {
+        filteredRooms = filteredRooms.filter(room => room.id.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+
+    displayRooms(filteredRooms);
 }
+
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -95,6 +106,91 @@ filterButtons.forEach(button => {
     });
 });
 
+
+    // Optionally, set the first button (Show all) as active by default
+    filterButtons[3].classList.add('active');
+
+function filterRooms(status) {
+    // Ensure currentRooms is populated before filtering
+    if (!currentRooms || currentRooms.length === 0) {
+        console.warn('No rooms to filter');
+        return;
+    }
+
+    let filteredRooms;
+
+    if (status) {
+        // Filter rooms by exact status (case-insensitive)
+        filteredRooms = currentRooms.filter(room => 
+            room.currentStatus.toLowerCase() === status.toLowerCase()
+        );
+    } else {
+        // If no status (show all), use all current rooms
+        filteredRooms = currentRooms;
+    }
+
+    // Debug logging
+    console.log(`Filtering rooms with status: ${status}`);
+    console.log(`Total rooms: ${currentRooms.length}`);
+    console.log(`Filtered rooms: ${filteredRooms.length}`);
+
+    // Display filtered rooms
+    displayRooms(filteredRooms);
+}
+
+// Modify the property selection event listener to set currentRooms
+propertySelect.addEventListener('change', function() {
+    const selectedProperty = mockData.properties.find(p => p.id == this.value);
+    
+    if (selectedProperty) {
+        // Crucially, set currentRooms here
+        currentRooms = selectedProperty.rooms;
+
+        // Rest of your existing code...
+        propertyDetails.style.display = 'block';
+        propertyName.textContent = selectedProperty.name;
+        propertyAddress.textContent = `Address: ${selectedProperty.address}`;
+
+        const propertyStats = calculatePropertyStats(selectedProperty);
+        propertyTotalRooms.textContent = propertyStats.total;
+        propertyEmptyRooms.textContent = propertyStats.empty;
+        propertyOccupiedRooms.textContent = propertyStats.occupied;
+
+        filterSection.style.display = 'block';
+
+        // Display all rooms initially
+        displayRooms(currentRooms);
+    } else {
+        propertyDetails.style.display = 'none';
+        filterSection.style.display = 'none';
+        roomList.innerHTML = '';
+        currentRooms = []; // Reset currentRooms
+    }
+});
+
+// Update filter buttons event listener
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const status = button.getAttribute('data-filter');
+        
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        // Filter rooms
+        filterRooms(status);
+    });
+});
+
+
+// Ensure "Show all" is active by default
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the "Show all" button (assuming it's the last button)
+    const showAllButton = filterButtons[filterButtons.length - 1];
+    showAllButton.classList.add('active');
+});
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {

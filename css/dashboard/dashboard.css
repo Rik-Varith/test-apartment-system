@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+/*Overview Section*/
+.overview {
+    background-color: var(--bg-very-light-cyan);
+    padding: 32px;  /* Increased padding */
+    border-radius: 24px; /* Larger radius */
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 1000px;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+.overview h1 {
+    color: var(--color-teal);
+}
+.stats {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+
+.stat-item span:first-child {
+    color: var(--color-teal);
+}
+
+.stat-item span:last-child {
+    color: var(--color-almost-black);
+}
+
+.all-location {
+    margin-top: 16px;
+}
+
+.all-location > p {
+    color: var(--color-almost-black);
+    margin-bottom: 8px;
+}
+
+/*Seclect property*/
+.property-selector {
+    margin-top: 50px;
+}
+.add-property {
+    color: var(--color-vibrant-magenta);
+    background: none;
+    padding: 0;
+}
+.selector-header { /*keep space between the header and add-btn*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.select-wrapper { /*dropdown box*/ 
+    position: relative;
+}
+.select-wrapper select {
+    width: 100%;
+    height: 48px;
+    padding: 12px 16px;
+    background-color: white;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: var(--color-neutral-gray);
+}
+.select-wrapper i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.select-wrapper::after { /* Remove the arrow in Firefox */
+    content: none !important;  
+}
+
+/* Property Details Section */
+.property-details {
+    background-color: none;
+    padding: 32px;  /* Increased padding */
+    margin-bottom:-30px;
+    margin-top:-20px;
+    width: 100%;
+    max-width: 1000px;
+}
+.property-header { /*keep space between the header and edit*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-burnt-orange);
+    margin-bottom: 5px;
+}
+.edit-property {
+    background-color: var(--bg-very-light-gray);
+    color: var(--color-almost-black);
+    border-radius: 10px;
+    padding: 8px 16px;
+    
+}
+.property-address {
+    color: var(--color-almost-black);
+
+}
+.property-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 16px;
+    color: var(--color-teal);
+
+}
+.property-stats .stat-item {
+    display: flex;
+    gap: 5px;
+}
+
+/* Filter buttons */
+
+.filter-section {
+    padding: 32px; /* Increased padding */
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 1000px;  
+}
+    
+.filter-btn {
+    display: flex;
+    padding: 5px 20px;
+    align-items: center;
+    gap: 20px;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+    
+.filter-btn.paid {  
+    background-color: var(--bg-light-cyan);
+    color: var(--color-dark-teal);
+    
+}
+
+.filter-btn.unpaid {
+    background-color: var(--bg-light-orange);
+    color: var(--color-burnt-orange);    
+}
+
+.filter-btn.overdue {
+    background-color: var(--color-vibrant-magenta);
+    opacity: 0.85;
+    color: var(--color-white);
+
+}
+
+.filter-btn.showall {
+    background-color: var(--bg-very-light-gray);
+    opacity: 0.8;
+}
+
+.filter-btn.paid:hover,
+.filter-btn.unpaid:hover,
+.filter-btn.overdue:hover,
+.filter-btn.showall:hover {
+    opacity: 1;
+    transform: scale(1.10);
+}
+
+/* For search*/
+.search-bar {
+    position: relative;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-neutral-gray);
+}
+
+/* Add hover states for buttons */
+.more-details:hover,
+.check-paid:hover {
+    color: var(--color-dark-teal);
+}
+
+.generate-invoice:hover {
+    opacity: 0.9;
+}
+
+
+
+/* Hide the default arrow in IE */
+select::-ms-expand {
+    display: none;
+}
+
+.select-wrapper select:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 2px rgba(0, 153, 160, 0.1);
+}
+
+@media screen and (max-width: 767px) {
+    .overview {
+        padding: 16px; 
+        border-radius: 16px;  
+    }
+
+    .stats {
+        margin-bottom: 24px;
+    }
+}
+
+body {
+    background-color: var(--bg-almost-white);
+    font-family: var(--font-sarabun);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Common button styles */
+
+
+/*search bar*/
+/* Common input styles */
+input {
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+}
+.search-bar i {
+    position: absolute;
+    right: 20px;
+    top: 28%;
+    transform: translateY(-28%);
+    pointer-events: none;
+}
+.search-bar input {
+    background-color: var(--bg-very-light-gray);
+    
+}
+
+
+
+.search-note {
+    margin-top: 1px;
+    color: var(--color-neutral-gray);
+}
+
+
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/* Optional: Tablet breakpoint if needed */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}

@@ -13,142 +13,143 @@
     
         <!-- CSS Files -->
         <link rel="stylesheet" href="css/utilities/variables.css">
-        <link rel="stylesheet" href="css/dashboard.css">
-        <link rel="stylesheet" href="css/components/overview.css">
-        <link rel="stylesheet" href="css/components/room-card.css">
-        <link rel="stylesheet" href="css/components/status-badges.css">
+        <link rel="stylesheet" href="css/dashboard/dashboard.css">
+        <link rel="stylesheet" href="css/dashboard/room-card.css">
     </head>
 <body>
     <div class="container">
 
-        <!-- Overview Section -->
-        <section class="overview">
-            <h1 class="h1">Overview</h1>
-            <div class="all-location">
-                <p class="p1">All location</p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="p2">Total rooms:</span>
-                        <span id="totalRooms" class="p2">0</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="p2">Empty rooms:</span>
-                        <span id="emptyRooms" class="p2">0</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="p2">Occupied room:</span>
-                        <span id="occupiedRooms" class="p2">0</span>
-                    </div>
-                </div>
+<!-- Overview Section -->
+<section class="overview">
+    <h1 class="h1">Overview</h1>
+    <div class="all-location">
+        <p class="p1">All location</p>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="p2">Total rooms:</span>
+                <span id="totalRooms" class="p2">0</span>
             </div>
-
-            <!-- Property Selector -->
-            <div class="property-selector">
-                <div class="selector-header">
-                    <h2 class="h3">Select Property</h2>
-                    <button id="addPropertyBtn" class="add-property p2">
-                        <i class="fas fa-plus"></i> Add Property
-                    </button>
-                </div>
-                <div class="select-wrapper">
-                    <select id="propertySelect" class="p4">
-                        <option value="">Select Property</option>
-                    </select>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+        <div class="stat-item">
+            <span class="p2">Empty rooms:</span>
+            <span id="emptyRooms" class="p2">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="p2">Occupied room:</span>
+            <span id="occupiedRooms" class="p2">0</span>
             </div>
-        </section>
-
-        <!-- Property Details Section (Initially Hidden) -->
-        <section id="propertyDetails" class="property-details" style="display: none;">
-            <div class="property-header">
-                <h2 id="propertyName" class="h2"></h2>
-                <button id="editPropertyBtn" class="edit-property p2">
-                    <i class="fas fa-edit"></i> edit property
-                </button>
-            </div>
-            <p id="propertyAddress" class="property-address p2"></p>
-            
-            
-            <div class="property-stats">
-                <div class="stat-item">
-                    <span class="p2">Total rooms:</span>
-                    <span id="propertyTotalRooms" class="p2">0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="p2">Empty rooms:</span>
-                    <span id="propertyEmptyRooms" class="p2">0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="p2">Occupied room:</span>
-                    <span id="propertyOccupiedRooms" class="p2">0</span>
-                </div>
-                
-            </div>
-        </section>
-
-        <!-- Filter Section -->
-        <section id="filterSection" class="filter-section" style="display: none;">
-            <h3 class="h3">Selected Filter</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn paid p2" data-filter="paid">Paid</button>
-                <button class="filter-btn unpaid p2" data-filter="unpaid">UnPaid</button>
-                <button class="filter-btn overdue p2" data-filter="overdue">Overdue</button>
-                <button class="filter-btn all p2" data-filter="">Show all</button>
-                
-            </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="search room name / unit no." class="p2">
-                <i class="fas fa-search"></i>
-                <p class="search-note p4">Note: Click on unit name to show detail</p>
-            </div>
-        </section>
-
-        <!-- Room List Section -->
-        <section id="roomList" class="room-list">
-            <!-- Room cards will be dynamically inserted here -->
-        </section>
-
-        <!-- Room Card Template (Hidden) -->
-        <template id="roomCardTemplate">
-            <div class="room-card">
-                <div class="room-header">
-                    <span class="room-name p2"></span>
-                    <span class="status-badge p2"></span>
-                    <button class="check-paid p2">
-                        Check if paid <i class="fas fa-check"></i>
-                    </button>
-                </div>
-                <div class="room-details">
-                    <div class="tenant-info">
-                        <div class="main-info">
-                            <p class="p2">Tenant Name: <span class="tenant-name"></span></p>
-                            <p class="p2">Nickname: <span class="tenant-nickname"></span></p>
-                        </div>
-                        <div class="contact-info">
-                            <p class="p2">Contact Number: <span class="tenant-contact"></span></p>
-                            <p class="p2">Time Stay: <span class="tenant-duration"></span></p>
-                        </div>
-                        <button class="more-details p2">More Details</button>
-                    </div>
-                    <div class="payment-info">
-                        <div class="current-payment">
-                            <p class="p2 payment-amount"></p>
-                            <p class="p2 rental-fee"></p>
-                            <p class="p2 electricity-fee"></p>
-                            <p class="p2 water-fee"></p>
-                        </div>
-                        <button class="generate-invoice p2">Generate Invoice</button>
-                    </div>
-                </div>
-            </div>
-        </template>
+        </div>
     </div>
 
-    <!-- JavaScript Files -->
-    <script src="js/mock-data/mockdata.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/components/property-modal.js"></script>
+<!-- Property Selector -->
+    <div class="property-selector">
+        <div class="selector-header">
+            <h2 class="h3">Select Property</h2>
+            <!-- Add Property -->
+            <button id="addPropertyBtn" class="add-property p2">
+                <i class="fas fa-plus"></i> Add Property
+            </button>
+        </div>
+    <!-- Property Select Dropdown -->
+        <div class="select-wrapper">
+            <select id="propertySelect" class="p4">
+                <option value="">Select Property</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Property Address and Name Details (Initially Hidden) -->
+<section id="propertyDetails" class="property-details" style="display: none;">
+    <div class="property-header">
+        <h2 id="propertyName" class="h2"></h2>
+        <button id="editPropertyBtn" class="edit-property p2">
+            <i class="fas fa-edit"></i> <p3>edit property</p3>
+        </button>
+    </div>
+        <p id="propertyAddress" class="property-address p2"></p>
+    <div class="property-stats">
+        <div class="stat-item">
+            <span class="p2">Total rooms:</span>
+            <span id="propertyTotalRooms" class="p2">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="p2">Empty rooms:</span>
+            <span id="propertyEmptyRooms" class="p2">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="p2">Occupied room:</span>
+            <span id="propertyOccupiedRooms" class="p2">0</span>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section id="filterSection" class="filter-section" style="display: none;">
+    <p class="p2">Selected Filter</p>
+    <div class="filter-btn">
+        <button class="filter-btn paid p2" data-filter="paid">Paid</button>
+        <button class="filter-btn unpaid p2" data-filter="unpaid">UnPaid</button>
+        <button class="filter-btn overdue p2" data-filter="overdue">Overdue</button>
+                <button class="filter-btn showall p2" data-filter="">Show all</button>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="search room name / unit no." class="p2">
+        <i class="fas fa-search"></i>
+        <p class="search-note p5">Note: Click on unit name to show detail</p>
+    </div>
+</section>
+
+<!-- Room List Section -->
+<section id="roomList" class="room-list">
+    <!-- Room cards will be dynamically inserted here -->
+</section>
+
+<!-- Room Card Template (Hidden) -->
+<template id="roomCardTemplate">
+    <div class="room-card">
+        <div class="room-header">
+            <span class="room-name p2"></span>
+            <span class="status-badge p2"></span>
+            <div class="paid-check-container">
+                <label class="paid-checkbox">
+                    <input type="checkbox" class="paid-check">
+                    <span class="checkmark"></span>
+                </label>
+            <span class="check-if-paid-text">Check if paid</span>
+        </div>
+    </div>   
+</template>
+    
+    <div class="room-details">
+        <div class="tenant-info">
+            <div class="main-info">
+                <p class="p2">Tenant Name: <span class="tenant-name"></span></p>
+                <p class="p2">Nickname: <span class="tenant-nickname"></span></p>
+            </div>
+            <div class="contact-info">
+                <p class="p2">Contact Number: <span class="tenant-contact"></span></p>
+                <p class="p2">Time Stay: <span class="tenant-duration"></span></p>
+            </div>
+                <button class="more-details p2">More Details</button>
+            </div>
+            <div class="payment-info">
+                <div class="current-payment">
+                    <p class="p2 payment-amount"></p>
+                    <p class="p2 rental-fee"></p>
+                    <p class="p2 electricity-fee"></p>
+                    <p class="p2 water-fee"></p>
+                </div>
+            <button class="generate-invoice p2">Generate Invoice</button>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- JavaScript Files -->
+<script src="js/mock-data/mockdata.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/components/property-modal.js"></script>
 
 </body>
 </html>

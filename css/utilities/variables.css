@@ -1,7 +1,7 @@
 :root {
     /* Text Colors */
     --color-teal: #0099A0;
-    --color-dark-teal: #0099A0;
+    --color-dark-teal: #007076;
     --color-dark-orange: #430000;
     --color-vibrant-magenta: #35111F;
     --color-almost-black: #3B3B3C;
@@ -14,7 +14,6 @@
     --bg-light-cyan: #DEF0F9;
     --bg-very-light-gray: #EDEDEE;
     --bg-almost-white: #F8F8F8;
-    --bg-white: #FFFFFF;
     --bg-light-orange: #faf0e8;
 
     /* Status Colors */
